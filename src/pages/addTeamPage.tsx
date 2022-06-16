@@ -1,7 +1,7 @@
 import React, { FC, useState } from "react";
 import { useSelector } from "react-redux";
 import store from "../store/store";
-import { useNavigate } from "react-router-dom";
+// import { useNavigate } from "react-router-dom";
 import rankingSlice from "../store/slices/ranking";
 import { TeamModel } from "../models/teamModel";
 
@@ -14,7 +14,7 @@ const AddTeamPage: FC<AddTeamPageProps> = (props) => {
   const [teammembers, setTeammembers] = useState("");
   const [showIncompleteWarning, setShowIncompleteWarning] = useState(false);
   const authStatus = useSelector(() => store.getState().auth.auth);
-  const navigate = useNavigate();
+  // const navigate = useNavigate();
 
   const confirmAdd = () => {
     if (teamName === "" || teammembers === "") {

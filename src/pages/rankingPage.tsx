@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import store from "../store/store";
 import { useSelector } from "react-redux";
 import Team from "../components/team";
@@ -6,7 +6,6 @@ import PrimeTeamContainer from "../components/primeTeamContainer";
 
 const RankingPage = () => {
   const teamList = useSelector(() => store.getState().ranking.teamList);
-  const [primeTeamsData, setPrimeTeamsData] = useState([]);
   return (
     <div className="bg-gray-700 w-full h-screen">
       <PrimeTeamContainer />
