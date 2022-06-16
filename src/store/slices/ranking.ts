@@ -4,9 +4,15 @@ const data = require("../../teams.json");
 
 interface stateInterface {
   teamList: any;
+  primeTeams: any;
 }
 const initialState: stateInterface = {
-  teamList: data,
+  teamList: data
+    .sort((a: any, b: any) => (a.score < b.score ? 1 : -1))
+    .slice(3, data.length),
+  primeTeams: data
+    .sort((a: any, b: any) => (a.score < b.score ? 1 : -1))
+    .slice(0, 3),
 };
 
 const rankingSlice = createSlice({

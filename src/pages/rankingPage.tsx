@@ -1,13 +1,16 @@
-import React from "react";
+import React, { useState } from "react";
 import store from "../store/store";
 import { useSelector } from "react-redux";
 import Team from "../components/team";
+import PrimeTeamContainer from "../components/primeTeamContainer";
 
 const RankingPage = () => {
   const teamList = useSelector(() => store.getState().ranking.teamList);
+  const [primeTeamsData, setPrimeTeamsData] = useState([]);
   return (
     <div className="bg-gray-700 w-full h-screen">
-      {teamList.map((team: any) => {
+      <PrimeTeamContainer />
+      {teamList.map((team: any, index: number) => {
         return (
           <Team
             name={team.name}
