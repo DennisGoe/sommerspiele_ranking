@@ -1,12 +1,10 @@
 import React, { useEffect, useState } from "react";
-import { useNavigate } from "react-router-dom";
 import { useSelector } from "react-redux";
 import store from "../store/store";
 import AddTeamPage from "./addTeamPage";
 import Team from "../components/team";
 
 const AddRemovePage = () => {
-  const navigate = useNavigate();
   const authState = useSelector(() => store.getState().auth.auth);
   const teamList = useSelector(() => store.getState().ranking.teamList);
   const [showAddForm, setShowAddForm] = useState(false);
@@ -36,7 +34,7 @@ const AddRemovePage = () => {
             )}
           </div>
           <div>
-            {teamList.map((team) => {
+            {teamList.map((team: any) => {
               return (
                 <Team
                   name={team.name}

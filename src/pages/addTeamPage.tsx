@@ -3,7 +3,7 @@ import { useSelector } from "react-redux";
 import store from "../store/store";
 import { useNavigate } from "react-router-dom";
 import rankingSlice from "../store/slices/ranking";
-import { Team } from "../models/team";
+import { TeamModel } from "../models/teamModel";
 
 interface AddTeamPageProps {
   setShowAddPage: (value: boolean) => void;
@@ -21,7 +21,7 @@ const AddTeamPage: FC<AddTeamPageProps> = (props) => {
       setShowIncompleteWarning(true);
       return;
     }
-    const completeTeamData: Team = {
+    const completeTeamData: TeamModel = {
       name: teamName,
       members: teammembers,
       score: 0,

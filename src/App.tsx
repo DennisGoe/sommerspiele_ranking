@@ -1,17 +1,13 @@
-import React from 'react';
-import Ranking from "./components/ranking";
+import React from "react";
 import CustomRouter from "./routing/customRouter";
-import {Provider} from "react-redux";
+import { Provider } from "react-redux";
 import store from "./store/store";
-
-
-
 
 function App() {
   return (
-      <Provider store={store}>
-        <CustomRouter/>
-      </Provider>
+    <Provider store={store}>
+      <CustomRouter />
+    </Provider>
   );
 }
 
