@@ -1,0 +1,16 @@
+{
+  "files": {
+    "main.css": "/sommerspiele_ranking/static/css/main.1c75c290.css",
+    "main.js": "/sommerspiele_ranking/static/js/main.d21f8629.js",
+    "static/media/Braunbär.jpg": "/sommerspiele_ranking/static/media/Braunbär.d06c1942481451f89aa6.jpg",
+    "static/media/Bierboys.jpg": "/sommerspiele_ranking/static/media/Bierboys.65203fbf38975e711a09.jpg",
+    "static/media/Filoyum.jpg": "/sommerspiele_ranking/static/media/Filoyum.22c81d43fbb02db34e21.jpg",
+    "index.html": "/sommerspiele_ranking/index.html",
+    "main.1c75c290.css.map": "/sommerspiele_ranking/static/css/main.1c75c290.css.map",
+    "main.d21f8629.js.map": "/sommerspiele_ranking/static/js/main.d21f8629.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.1c75c290.css",
+    "static/js/main.d21f8629.js"
+  ]
+}
