@@ -12,6 +12,11 @@ interface PrimeTeamsProps {
 const PrimeTeams: FC<PrimeTeamsProps> = (props) => {
   return (
     <div className={`${props.width} grid place-items-center ${props.fontSize}`}>
+      <img
+        className="w-3/4"
+        src={require(`../images/${props.name}.jpg`)}
+        alt=""
+      />
       {props.place === 1 && (
         <strong className="text-6xl text-yellow-500">{props.place}</strong>
       )}
