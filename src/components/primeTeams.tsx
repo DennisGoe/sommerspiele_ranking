@@ -12,20 +12,14 @@ interface PrimeTeamsProps {
 const PrimeTeams: FC<PrimeTeamsProps> = (props) => {
   return (
     <div className={`${props.width} grid place-items-center ${props.fontSize}`}>
-      <img
-        className="w-3/4"
-        src={require(`../images/${props.name}.jpg`)}
-        alt=""
-      />
-      {props.place === 1 && (
-        <strong className="text-6xl text-yellow-500">{props.place}</strong>
-      )}
-      {props.place === 2 && (
-        <strong className="text-4xl text-neutral-400">{props.place}</strong>
-      )}
-      {props.place === 3 && (
-        <strong className="text-3xl text-yellow-800">{props.place}</strong>
-      )}
+      <div className="relative w-17 h-17 grid place-items-center">
+        <span className="text-white">{props.place}</span>
+        <img
+          className="w-3/4 rounded-full border-2 border-green-400 shadow-sm"
+          src={require(`../images/${props.name}.jpg`)}
+          alt=""
+        />
+      </div>
 
       <div>
         <strong className="text-white text-md">{props.name}</strong>
@@ -34,7 +28,7 @@ const PrimeTeams: FC<PrimeTeamsProps> = (props) => {
         <span className="text-neutral-400 text-xs">{props.members}</span>
       </div>
       <div>
-        <strong className="text-white text-lg">{props.score}</strong>
+        <strong className="text-green-400 text-lg">{props.score}</strong>
       </div>
     </div>
   );

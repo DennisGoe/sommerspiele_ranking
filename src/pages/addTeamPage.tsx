@@ -14,7 +14,6 @@ const AddTeamPage: FC<AddTeamPageProps> = (props) => {
   const [teammembers, setTeammembers] = useState("");
   const [showIncompleteWarning, setShowIncompleteWarning] = useState(false);
   const authStatus = useSelector(() => store.getState().auth.auth);
-  // const navigate = useNavigate();
 
   const confirmAdd = () => {
     if (teamName === "" || teammembers === "") {
@@ -29,6 +28,7 @@ const AddTeamPage: FC<AddTeamPageProps> = (props) => {
     store.dispatch(rankingSlice.actions.addTeam(completeTeamData));
     props.setShowAddPage(false);
   };
+
   return (
     <div className="bg-neutral-700 w-full h-screen">
       {showIncompleteWarning && (

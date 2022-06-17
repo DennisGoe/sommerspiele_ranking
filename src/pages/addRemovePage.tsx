@@ -6,7 +6,7 @@ import Team from "../components/team";
 
 const AddRemovePage = () => {
   const authState = useSelector(() => store.getState().auth.auth);
-  const teamList = useSelector(() => store.getState().ranking.teamList);
+  const teamList = useSelector(() => store.getState().ranking.completeList);
   const [showAddForm, setShowAddForm] = useState(false);
   const [copiedList, setCopiedList] = useState(false);
 
@@ -19,7 +19,7 @@ const AddRemovePage = () => {
     setCopiedList(true);
   };
   return (
-    <div className="w-full h-screen bg-neutral-700">
+    <div className="w-full h-screen bg-primary">
       {!showAddForm && (
         <div>
           <div className="flex items-center">
@@ -34,13 +34,14 @@ const AddRemovePage = () => {
             )}
           </div>
           <div>
-            {teamList.map((team: any) => {
+            {teamList.map((team: any, index: number) => {
               return (
                 <Team
                   name={team.name}
                   members={team.members}
                   score={team.score}
                   key={team.name}
+                  place={index + 1}
                 />
               );
             })}

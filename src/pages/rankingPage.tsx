@@ -5,9 +5,9 @@ import Team from "../components/team";
 import PrimeTeamContainer from "../components/primeTeamContainer";
 
 const RankingPage = () => {
-  const teamList = useSelector(() => store.getState().ranking.teamList);
+  const teamList = useSelector(() => store.getState().ranking.notTopThreeTeams);
   return (
-    <div className="bg-gray-700 w-full h-screen">
+    <div className="bg-primary w-full h-screen">
       <PrimeTeamContainer />
       {teamList.map((team: any, index: number) => {
         return (
@@ -16,6 +16,7 @@ const RankingPage = () => {
             members={team.members}
             score={team.score}
             key={team.name}
+            place={index + 4}
           />
         );
       })}

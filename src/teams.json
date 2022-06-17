@@ -1,13 +1,13 @@
 [
   {
-    "name": "Filoyum",
-    "members": "Daniel, Jannik",
-    "score": 18
-  },
-  {
     "name": "Braunbär",
     "members": "Dennis, Bruno",
     "score": 21
+  },
+  {
+    "name": "Filoyum",
+    "members": "Daniel, Jannik",
+    "score": 18
   },
   {
     "name": "Houling Wolves",
@@ -18,5 +18,10 @@
     "name": "Bierboys",
     "members": "Petros, Timo",
     "score": 8
+  },
+  {
+    "name": "Dennis",
+    "members": "Dennis allein weil cool",
+    "score": 0
   }
 ]
