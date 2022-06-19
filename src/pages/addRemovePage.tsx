@@ -21,7 +21,7 @@ const AddRemovePage = () => {
   return (
     <div className="w-full h-screen bg-primary">
       {!showAddForm && (
-        <div>
+        <div className=" h-screen flex flex-col">
           <div className="flex items-center">
             <button
               onClick={printJSONTeam}
@@ -33,7 +33,7 @@ const AddRemovePage = () => {
               <span className="text-green-600 text-xs">copied!</span>
             )}
           </div>
-          <div>
+          <div className="grow overflow-y-scroll bg-primary pb-8">
             {teamList.map((team: any, index: number) => {
               return (
                 <Team
@@ -52,7 +52,7 @@ const AddRemovePage = () => {
         <div>
           {!showAddForm && (
             <button
-              className="p-4 bg-green-300 text-white w-20 h-20 right-2 bottom-2 rounded-full absolute text-2xl"
+              className="p-4 bg-green-300 text-white w-20 h-20 right-2 bottom-8 rounded-full absolute text-2xl"
               onClick={() => setShowAddForm(true)}
             >
               +

@@ -3,8 +3,8 @@ import store from "../store/store";
 import authSlice from "../store/slices/auth";
 
 const Login = () => {
-  const [userName, setUserName] = useState("");
-  const [password, setPassword] = useState("");
+  const [userName, setUserName] = useState("Dennis");
+  const [password, setPassword] = useState("5804");
   const [displayLoginError, setDisplayLoginError] = useState(false);
 
   const confirmLogin = () => {
