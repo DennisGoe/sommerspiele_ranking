@@ -21,9 +21,13 @@ const rankingSlice = createSlice({
   name: "rankingSlice",
   initialState,
   reducers: {
-    // setTotalList(state, action: PayloadAction<any>) {
-    //   state.teamList = action.payload;
-    // },
+    updateTeam(state, action: PayloadAction<TeamModel>) {
+      console.log("inside update", action.payload);
+      const teamIndex = state.completeList.findIndex(
+        (team: any) => action.payload.name === team.name
+      );
+      state.completeList[teamIndex] = action.payload;
+    },
     addTeam(state, action: PayloadAction<TeamModel>) {
       state.completeList.push(action.payload);
     },
@@ -36,5 +40,5 @@ const rankingSlice = createSlice({
   },
 });
 
-export const { addTeam, removeTeam } = rankingSlice.actions;
+export const { addTeam, removeTeam, updateTeam } = rankingSlice.actions;
 export default rankingSlice;

@@ -1,4 +1,7 @@
-import React, { FC } from "react";
+import React, { FC, useState } from "react";
+import { TeamModel } from "../models/teamModel";
+import store from "../store/store";
+import rankingSlice from "../store/slices/ranking";
 interface TeamProps {
   name: string;
   members: string;
@@ -6,6 +9,16 @@ interface TeamProps {
   place: number;
 }
 const Team: FC<TeamProps> = (props) => {
+  const [score, setScore] = useState(props.score as unknown as number);
+  const updateTeam = (e: any) => {
+    setScore(e.target.value);
+    const teamData: TeamModel = {
+      name: props.name,
+      members: props.members,
+      score: e.target.value,
+    };
+    store.dispatch(rankingSlice.actions.updateTeam(teamData));
+  };
   return (
     <div className=" text-white pt-2 mb-1  flex">
       <div className="text-white grid place-items-center mr-4 ml-4">
@@ -28,7 +41,13 @@ const Team: FC<TeamProps> = (props) => {
             </div>
           </div>
           <div className="grid place-items-center ml-3">
-            <strong className="text-green-400 text-lg">{props.score}</strong>
+            <input
+              type="text"
+              value={score}
+              className="w-5 text-black"
+              onChange={(e) => updateTeam(e)}
+            />
+            {/*<strong className="text-green-400 text-lg">{props.score}</strong>*/}
           </div>
         </div>
       </div>
